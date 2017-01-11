@@ -89,7 +89,6 @@
             [data writeToFile:fullPath atomically:YES];
             NSDictionary *content = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];//转换数据格式
             
-            //   NSLog(@"RESPONSE　DATA: %@", content);//打印结果、
                 }
     }];
 }
@@ -240,8 +239,8 @@
         NSArray *nib = [[NSBundle mainBundle]loadNibNamed:@"forecastTableViewCell" owner:nil options:nil];
         forecastcall = [nib objectAtIndex:0];
         //foreacstcell.cond.text = [cond objectAtIndex:indexPath.row-1];
-        forecastcall.low.text = [low objectAtIndex:indexPath.row-1];
-        forecastcall.high.text = [high objectAtIndex:indexPath.row-1];
+        forecastcall.low.text = [[low objectAtIndex:indexPath.row-1]stringByAppendingString:@"°"];
+        forecastcall.high.text = [[high objectAtIndex:indexPath.row-1]stringByAppendingString:@"°"];
         //foreacstcell.sc.text = [sc objectAtIndex:indexPath.row-1];
         forecastcall.date.text = [date objectAtIndex:indexPath.row-1];
         NSString *tmp = [condcode objectAtIndex:indexPath.row-1];
