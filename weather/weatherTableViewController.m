@@ -222,11 +222,11 @@
 -(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if(indexPath.row == 0){
         return XK_SCREEN_HEIGHT/12*5;
-    }else if (indexPath.row >3 && indexPath.row<10){
+    }else if (indexPath.row >4 && indexPath.row<11){
         return (XK_SCREEN_HEIGHT-64)/6;
     }else if (indexPath.row<=3 && indexPath.row != 0){
         return (XK_SCREEN_HEIGHT - XK_SCREEN_HEIGHT/12*5)/7;
-    }else if (indexPath.row == 16){
+    }else if (indexPath.row == 4){
         return 64;
     }
     else
@@ -258,7 +258,7 @@
         // foreacstcell.alpha = 1;
         forecastcall.selectionStyle = UITableViewCellSelectionStyleNone;
         return forecastcall;
-    }else if(indexPath.row > 3 && indexPath.row < 10){
+    }else if(indexPath.row > 4 && indexPath.row < 11){
         
         if(suggestcell == nil){
             suggestcell = [tableView dequeueReusableCellWithIdentifier:@"suggestcell"];
@@ -266,13 +266,13 @@
         NSArray *nib = [[NSBundle mainBundle]loadNibNamed:@"suggestTableViewCell" owner:nil options:nil];
         suggestcell = [nib objectAtIndex:0];
         suggestcell.spe.alpha = 0.3;
-        suggestcell.sugTitle.text = [suggestTitle objectAtIndex:indexPath.row - 4];
-        suggestcell.sugText.text = [suggestText objectAtIndex:indexPath.row - 4];
-        suggestcell.title.text = [title objectAtIndex:indexPath.row - 4];
+        suggestcell.sugTitle.text = [suggestTitle objectAtIndex:indexPath.row - 5];
+        suggestcell.sugText.text = [suggestText objectAtIndex:indexPath.row - 5];
+        suggestcell.title.text = [title objectAtIndex:indexPath.row - 5];
         suggestcell.selectionStyle = UITableViewCellSelectionStyleNone;
         suggestcell.backgroundColor = [UIColor clearColor];
         
-        if (indexPath.row == 9) {
+        if (indexPath.row == 10) {
             suggestcell.spe.hidden = NO;
         }else{
             suggestcell.spe.hidden = YES;
@@ -292,7 +292,7 @@
         // weathercell.alpha = 1;
         weathercell.selectionStyle = UITableViewCellSelectionStyleNone;
         return weathercell;
-    }else if (indexPath.row == 16){
+    }else if (indexPath.row == 4){
         if(hourcell == nil){
             hourcell = [tableView dequeueReusableCellWithIdentifier:@"hourcell"];
         }
@@ -319,32 +319,32 @@
         }
         NSArray *nib = [[NSBundle mainBundle]loadNibNamed:@"weatherTodayTableViewCell" owner:nil options:nil];
         todaycell = [nib objectAtIndex:0];
-        if (indexPath.row == 10) {
+        if (indexPath.row == 11) {
             todaycell.l1key.text = @"日出：";
             todaycell.l2key.text = @"日落：";
             todaycell.l1value.text = [today objectForKey:@"sr"];
             todaycell.l2value.text = [today objectForKey:@"ss"];
-        }else if (indexPath.row == 11) {
+        }else if (indexPath.row == 12) {
             todaycell.l1key.text = @"降雨概率：";
             todaycell.l2key.text = @"湿度：";
             todaycell.l1value.text = [today objectForKey:@"pop"];
             todaycell.l2value.text = [today objectForKey:@"hum"];
-        }else if (indexPath.row == 12) {
+        }else if (indexPath.row == 13) {
             todaycell.l1key.text = @"风速：";
             todaycell.l2key.text = @"体感温度：";
             todaycell.l1value.text = [today objectForKey:@"spd"];
             todaycell.l2value.text = [today objectForKey:@"fl"];
-        }else if (indexPath.row == 13) {
+        }else if (indexPath.row == 14) {
             todaycell.l1key.text = @"降水量：";
             todaycell.l2key.text = @"气压：";
             todaycell.l1value.text = [today objectForKey:@"pcpn"];
             todaycell.l2value.text = [today objectForKey:@"pres"];
-        }else if (indexPath.row == 14) {
+        }else if (indexPath.row == 15) {
             todaycell.l1key.text = @"能见度：";
             todaycell.l2key.text = @"紫外线指数：";
             todaycell.l1value.text = [today objectForKey:@"vis"];
             todaycell.l2value.text = [today objectForKey:@"brf"];
-        }else if (indexPath.row == 15) {
+        }else if (indexPath.row == 16) {
             todaycell.l1key.text = @"空气质量指数：";
             todaycell.l2key.text = @"空气质量：";
             todaycell.l1value.text = [today objectForKey:@"aqi"];
