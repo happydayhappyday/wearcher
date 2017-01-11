@@ -47,6 +47,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //widget数据
+    NSString *groupID = @"group.com.2016.widgetweather";
+    NSUserDefaults *shared = [[NSUserDefaults alloc]initWithSuiteName:groupID];
+    [shared setObject:@"1000" forKey:@"number"];
+    [shared synchronize];
+    
+    
      NSString *httpUrl = @"https://free-api.heweather.com/v5/weather?city=CN101270401&key=cb30db2c8c294d1995245e1a4c2914a0";
      [self request:httpUrl];
     self.mytableview.delegate = self;
@@ -105,7 +112,7 @@
     NSDictionary *jsondata2 = [[jsondata objectForKey:@"daily_forecast"]objectAtIndex:1];
     NSDictionary *jsondata3 = [[jsondata objectForKey:@"daily_forecast"]objectAtIndex:2];
     hourArray = [[NSMutableDictionary alloc]init];
-    for (int i = 0; i<= [[jsondata objectForKey:@"daily_forecast"]count]; i++) {
+    for (int i = 0; i< [[jsondata objectForKey:@"hourly_forecast"]count]; i++) {
         NSDictionary *hour = [[jsondata objectForKey:@"hourly_forecast"]objectAtIndex:i];
         [hourArray setObject:hour forKey:[NSString stringWithFormat:@"%d", i]];
     }
