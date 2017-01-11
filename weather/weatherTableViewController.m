@@ -53,6 +53,11 @@
     [shared setObject:@"1000" forKey:@"number"];
     [shared synchronize];
     
+//    
+//    NSString *groupID1 = @"group.com.2016.widgetweather";
+//    NSUserDefaults *sharedd = [[NSUserDefaults alloc]initWithSuiteName:groupID1];
+//    NSString *string = [NSString stringWithFormat:@"%@",[sharedd objectForKey:@"number"]];
+//    NSLog(@"%@",string);
     
      NSString *httpUrl = @"https://free-api.heweather.com/v5/weather?city=CN101270401&key=cb30db2c8c294d1995245e1a4c2914a0";
      [self request:httpUrl];

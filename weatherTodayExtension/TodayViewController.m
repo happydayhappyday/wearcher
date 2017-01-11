@@ -1,4 +1,4 @@
-//
+ //
 //  TodayViewController.m
 //  weatherTodayExtension
 //
@@ -17,14 +17,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    // Do any additional setup after loading the view from its nib.
+    [self config];
+}
+- (void)viewWillAppear:(BOOL)animated{
+  
+    
+    [self config];
+}
+-(void)config{
     NSString *groupID = @"group.com.2016.widgetweather";
     NSUserDefaults *shared = [[NSUserDefaults alloc]initWithSuiteName:groupID];
     NSString *string = [NSString stringWithFormat:@"%@",[shared objectForKey:@"number"]];
     NSLog(@"%@",string);
     self.namelab.text = string;
-    // Do any additional setup after loading the view from its nib.
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

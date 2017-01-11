@@ -157,6 +157,9 @@
 		2019BD7F1E2600A200039368 /* weatherTodayExtension */ = {
 			isa = PBXGroup;
 			children = (
+				2019BD8F1E2619FF00039368 /* View */,
+				2019BD901E2619FF00039368 /* Model */,
+				2019BD911E2619FF00039368 /* Controller */,
 				2019BD8E1E26029300039368 /* weatherTodayExtension.entitlements */,
 				2019BD801E2600A200039368 /* TodayViewController.h */,
 				2019BD811E2600A200039368 /* TodayViewController.m */,
@@ -164,6 +167,27 @@
 				2019BD861E2600A200039368 /* Info.plist */,
 			);
 			path = weatherTodayExtension;
+			sourceTree = "<group>";
+		};
+		2019BD8F1E2619FF00039368 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2019BD901E2619FF00039368 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2019BD911E2619FF00039368 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		205B66581E2203B70092D64C = {
