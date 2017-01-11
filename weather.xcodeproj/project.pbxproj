@@ -20,7 +20,6 @@
 		20B6E3B91E23373800C91D4F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20B6E3B81E23373800C91D4F /* Foundation.framework */; };
 		20B6E3BB1E23374000C91D4F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20B6E3BA1E23374000C91D4F /* CoreGraphics.framework */; };
 		20B6E3BD1E23374600C91D4F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20B6E3BC1E23374600C91D4F /* UIKit.framework */; };
-		20B6E3F21E23388400C91D4F /* WXViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20B6E3F11E23388400C91D4F /* WXViewController.m */; };
 		20B6E3F51E23933D00C91D4F /* weatherTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20B6E3F41E23933D00C91D4F /* weatherTableViewController.m */; };
 		20B6E3F91E23973D00C91D4F /* weatherTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20B6E3F71E23973D00C91D4F /* weatherTableViewCell.m */; };
 		20B6E3FA1E23973D00C91D4F /* weatherTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20B6E3F81E23973D00C91D4F /* weatherTableViewCell.xib */; };
@@ -71,8 +70,6 @@
 		20B6E3B81E23373800C91D4F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		20B6E3BA1E23374000C91D4F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		20B6E3BC1E23374600C91D4F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		20B6E3F01E23388400C91D4F /* WXViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXViewController.h; sourceTree = "<group>"; };
-		20B6E3F11E23388400C91D4F /* WXViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXViewController.m; sourceTree = "<group>"; };
 		20B6E3F31E23933D00C91D4F /* weatherTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = weatherTableViewController.h; sourceTree = "<group>"; };
 		20B6E3F41E23933D00C91D4F /* weatherTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = weatherTableViewController.m; sourceTree = "<group>"; };
 		20B6E3F61E23973D00C91D4F /* weatherTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = weatherTableViewCell.h; sourceTree = "<group>"; };
@@ -160,8 +157,6 @@
 				20B6E3FE1E23977800C91D4F /* forecastTableViewCell.h */,
 				20B6E3FF1E23977800C91D4F /* forecastTableViewCell.m */,
 				20B6E4001E23977800C91D4F /* forecastTableViewCell.xib */,
-				20B6E3F01E23388400C91D4F /* WXViewController.h */,
-				20B6E3F11E23388400C91D4F /* WXViewController.m */,
 				20B6E3F31E23933D00C91D4F /* weatherTableViewController.h */,
 				20B6E3F41E23933D00C91D4F /* weatherTableViewController.m */,
 				205B666D1E2203B70092D64C /* Main.storyboard */,
@@ -370,7 +365,6 @@
 				205B66661E2203B70092D64C /* main.m in Sources */,
 				20B6E40B1E2397ED00C91D4F /* weatherTodayTableViewCell.m in Sources */,
 				20B6E3F51E23933D00C91D4F /* weatherTableViewController.m in Sources */,
-				20B6E3F21E23388400C91D4F /* WXViewController.m in Sources */,
 				20B6E4011E23977800C91D4F /* forecastTableViewCell.m in Sources */,
 				20B6E4061E23978E00C91D4F /* suggestTableViewCell.m in Sources */,
 				20607B0E1E24DCEF00D9FFA4 /* weatherHourTableViewCell.m in Sources */,

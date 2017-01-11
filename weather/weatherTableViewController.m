@@ -40,15 +40,15 @@
     NSMutableArray *hourtmp;
     NSMutableArray *hourtime;
     long sumday;
-    long day;
     int week;
-    int h;
 }@end
 
 @implementation weatherTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+     NSString *httpUrl = @"https://free-api.heweather.com/v5/weather?city=CN101270401&key=cb30db2c8c294d1995245e1a4c2914a0";
+     [self request:httpUrl];
     self.mytableview.delegate = self;
     self.mytableview.dataSource = self;
     self.navigationItem.title = @"";
@@ -61,26 +61,40 @@
         content = [NSJSONSerialization JSONObjectWithData:weather options:NSJSONReadingMutableContainers error:nil];//转换数据格式
         NSLog(@"%@",content);
     }
-    UIButton *BackButton = [UIButton buttonWithType:UIButtonTypeSystem];
-    BackButton.frame = CGRectMake(8, 30, 25, 25);
-    [BackButton setBackgroundImage:[UIImage imageNamed:@"返回"] forState:UIControlStateNormal];
-    [BackButton addTarget:self action:@selector(back2) forControlEvents:UIControlEventTouchUpInside];
-    
-    //self.navigationItem.leftBarButtonItems = @[spaceItem,BackbarButton];
-    [self.view addSubview:BackButton];
 
     NSTimeInterval time = [[NSDate date] timeIntervalSince1970];
     sumday = time /(60*60*24);
     week =(int)sumday %7;
-    day = time /(3600);
-    h = (int)day %24;
     weekday = [NSArray arrayWithObjects:@"星期四",@"星期五",@"星期六",@"星期日",@"星期一",@"星期二",@"星期三",nil];
     title = [NSArray arrayWithObjects:@"穿衣指数",@"感冒指数",@"运动指数",@"舒适度",@"旅游指数",@"紫外线指数",nil];
     [self ready];
 }
--(void)back2{
-    [self.navigationController popViewControllerAnimated:YES];
+-(void)request:(NSString *)httpUrl{
+    NSURL *url = [NSURL URLWithString:httpUrl];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10];
+    [request setHTTPMethod:@"GET"];
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *  response, NSData * data, NSError *  error) {
+        if(error){
+            NSLog(@"出错");
+        }else{
+            NSInteger responseCode = [(NSHTTPURLResponse *)response statusCode];
+            
+            NSLog(@"responseCode == %ld",responseCode);
+            //存储json
+            NSString *fullPath = [[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingPathComponent:[NSString stringWithFormat:@"weather"]];
+            NSFileManager *fielManager = [NSFileManager defaultManager];
+            if([fielManager fileExistsAtPath:fullPath]){
+                [fielManager removeItemAtPath:fullPath error:nil];
+            }
+            [data writeToFile:fullPath atomically:YES];
+            NSDictionary *content = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];//转换数据格式
+            
+            //   NSLog(@"RESPONSE　DATA: %@", content);//打印结果、
+                }
+    }];
 }
+
+
 -(void)ready{
     NSDictionary *jsondata = [[content objectForKey:@"HeWeather5"]lastObject];
     today = [[NSMutableDictionary alloc]init];
