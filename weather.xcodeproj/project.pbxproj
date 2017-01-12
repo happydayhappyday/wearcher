@@ -11,6 +11,7 @@
 		2019BD821E2600A200039368 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2019BD811E2600A200039368 /* TodayViewController.m */; };
 		2019BD851E2600A200039368 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2019BD831E2600A200039368 /* MainInterface.storyboard */; };
 		2019BD891E2600A200039368 /* weatherTodayExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2019BD7C1E2600A200039368 /* weatherTodayExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2019BD961E2714B700039368 /* 102.png in Resources */ = {isa = PBXBuildFile; fileRef = 2019BD951E2714B700039368 /* 102.png */; };
 		205B66661E2203B70092D64C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 205B66651E2203B70092D64C /* main.m */; };
 		205B66691E2203B70092D64C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 205B66681E2203B70092D64C /* AppDelegate.m */; };
 		205B666F1E2203B70092D64C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 205B666D1E2203B70092D64C /* Main.storyboard */; };
@@ -81,6 +82,7 @@
 		2019BD841E2600A200039368 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		2019BD861E2600A200039368 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2019BD8E1E26029300039368 /* weatherTodayExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = weatherTodayExtension.entitlements; sourceTree = "<group>"; };
+		2019BD951E2714B700039368 /* 102.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 102.png; sourceTree = "<group>"; };
 		205B66611E2203B70092D64C /* weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		205B66651E2203B70092D64C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		205B66671E2203B70092D64C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 		2019BD7F1E2600A200039368 /* weatherTodayExtension */ = {
 			isa = PBXGroup;
 			children = (
+				2019BD921E263A7E00039368 /* Resource */,
 				2019BD8F1E2619FF00039368 /* View */,
 				2019BD901E2619FF00039368 /* Model */,
 				2019BD911E2619FF00039368 /* Controller */,
@@ -188,6 +191,14 @@
 			children = (
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		2019BD921E263A7E00039368 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				2019BD951E2714B700039368 /* 102.png */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		205B66581E2203B70092D64C = {
@@ -438,6 +449,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2019BD851E2600A200039368 /* MainInterface.storyboard in Resources */,
+				2019BD961E2714B700039368 /* 102.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

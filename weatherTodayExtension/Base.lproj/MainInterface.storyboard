@@ -82,12 +82,11 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" alpha="0.45000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1002" translatesAutoresizingMaskIntoConstraints="NO" id="hmr-65-3oh">
-                                <rect key="frame" x="289" y="27" width="70" height="70"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="102" translatesAutoresizingMaskIntoConstraints="NO" id="spI-OP-fbM">
+                                <rect key="frame" x="286" y="23" width="70" height="70"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="MM8-Br-ZM0"/>
-                                    <constraint firstAttribute="width" constant="70" id="w8y-yK-2sN"/>
+                                    <constraint firstAttribute="width" constant="70" id="EC2-db-7yu"/>
+                                    <constraint firstAttribute="height" constant="70" id="vT8-BS-ZPZ"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -96,15 +95,15 @@
                             <constraint firstItem="hs4-dM-RPm" firstAttribute="leading" secondItem="Mdf-iU-CgY" secondAttribute="trailing" constant="15" id="22M-ev-WKt"/>
                             <constraint firstItem="QeO-XR-b8b" firstAttribute="baseline" secondItem="Mdf-iU-CgY" secondAttribute="baseline" id="43o-iv-TdR"/>
                             <constraint firstItem="oOL-6a-7QI" firstAttribute="leading" secondItem="dX1-HS-y5H" secondAttribute="leadingMargin" constant="19" id="8sr-q4-RQw"/>
-                            <constraint firstItem="oOL-6a-7QI" firstAttribute="top" secondItem="hmr-65-3oh" secondAttribute="top" constant="-4" id="Dgr-Sh-TGg"/>
+                            <constraint firstItem="oOL-6a-7QI" firstAttribute="top" secondItem="spI-OP-fbM" secondAttribute="top" id="9MH-nv-vkH"/>
                             <constraint firstItem="Mdf-iU-CgY" firstAttribute="leading" secondItem="QeO-XR-b8b" secondAttribute="trailing" constant="16" id="Lxb-Rm-4J1"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="hmr-65-3oh" secondAttribute="trailing" id="U7c-Td-Rgw"/>
-                            <constraint firstItem="4DQ-Us-LvZ" firstAttribute="centerY" secondItem="hmr-65-3oh" secondAttribute="centerY" constant="-3.5" id="hRf-3f-b0D"/>
+                            <constraint firstItem="4DQ-Us-LvZ" firstAttribute="centerY" secondItem="spI-OP-fbM" secondAttribute="centerY" id="XB7-L3-DIn"/>
                             <constraint firstItem="4DQ-Us-LvZ" firstAttribute="leading" secondItem="oOL-6a-7QI" secondAttribute="trailing" constant="7" id="ieg-MS-oXa"/>
                             <constraint firstItem="Mdf-iU-CgY" firstAttribute="baseline" secondItem="hs4-dM-RPm" secondAttribute="baseline" id="jkm-r1-VWE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="spI-OP-fbM" secondAttribute="trailing" constant="3" id="mUM-mO-f5R"/>
                             <constraint firstItem="hs4-dM-RPm" firstAttribute="baseline" secondItem="k92-bh-PWX" secondAttribute="baseline" id="mZo-QZ-gUL"/>
                             <constraint firstItem="Mdf-iU-CgY" firstAttribute="top" secondItem="4DQ-Us-LvZ" secondAttribute="bottom" constant="10" id="oru-Bi-kCj"/>
-                            <constraint firstItem="hmr-65-3oh" firstAttribute="top" secondItem="T0x-zB-6Vl" secondAttribute="bottom" constant="7" id="vHt-Xm-QOp"/>
+                            <constraint firstItem="oOL-6a-7QI" firstAttribute="top" secondItem="T0x-zB-6Vl" secondAttribute="bottom" constant="3" id="vdS-01-wi3"/>
                             <constraint firstItem="QeO-XR-b8b" firstAttribute="leading" secondItem="dX1-HS-y5H" secondAttribute="leadingMargin" constant="13" id="wtS-eW-QYf"/>
                         </constraints>
                     </view>
@@ -117,6 +116,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="1002" width="200" height="200"/>
+        <image name="102" width="200" height="200"/>
     </resources>
 </document>
