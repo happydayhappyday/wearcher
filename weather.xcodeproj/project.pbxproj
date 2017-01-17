@@ -34,6 +34,8 @@
 		20B6E4071E23978E00C91D4F /* suggestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20B6E4051E23978E00C91D4F /* suggestTableViewCell.xib */; };
 		20B6E40B1E2397ED00C91D4F /* weatherTodayTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20B6E4091E2397ED00C91D4F /* weatherTodayTableViewCell.m */; };
 		20B6E40C1E2397ED00C91D4F /* weatherTodayTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20B6E40A1E2397ED00C91D4F /* weatherTodayTableViewCell.xib */; };
+		2D78AD661E2E90BB002F6690 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D78AD651E2E90BA002F6690 /* NetworkExtension.framework */; };
+		2D78AD681E2E90C4002F6690 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D78AD671E2E90C4002F6690 /* CFNetwork.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +120,9 @@
 		20B6E4081E2397ED00C91D4F /* weatherTodayTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = weatherTodayTableViewCell.h; sourceTree = "<group>"; };
 		20B6E4091E2397ED00C91D4F /* weatherTodayTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = weatherTodayTableViewCell.m; sourceTree = "<group>"; };
 		20B6E40A1E2397ED00C91D4F /* weatherTodayTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = weatherTodayTableViewCell.xib; sourceTree = "<group>"; };
+		2D78AD641E2E8EF7002F6690 /* weather.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = weather.entitlements; sourceTree = "<group>"; };
+		2D78AD651E2E90BA002F6690 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
+		2D78AD671E2E90C4002F6690 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +138,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D78AD681E2E90C4002F6690 /* CFNetwork.framework in Frameworks */,
+				2D78AD661E2E90BB002F6690 /* NetworkExtension.framework in Frameworks */,
 				20B6E3BD1E23374600C91D4F /* UIKit.framework in Frameworks */,
 				20B6E3BB1E23374000C91D4F /* CoreGraphics.framework in Frameworks */,
 				20B6E3B91E23373800C91D4F /* Foundation.framework in Frameworks */,
@@ -227,6 +234,7 @@
 		205B66631E2203B70092D64C /* weather */ = {
 			isa = PBXGroup;
 			children = (
+				2D78AD641E2E8EF7002F6690 /* weather.entitlements */,
 				20607B081E24C44000D9FFA4 /* Resource */,
 				20B6E3B61E2336E100C91D4F /* lib */,
 				205B66671E2203B70092D64C /* AppDelegate.h */,
@@ -301,6 +309,8 @@
 		20B6E3B71E23373800C91D4F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2D78AD671E2E90C4002F6690 /* CFNetwork.framework */,
+				2D78AD651E2E90BA002F6690 /* NetworkExtension.framework */,
 				20B6E3BC1E23374600C91D4F /* UIKit.framework */,
 				20B6E3BA1E23374000C91D4F /* CoreGraphics.framework */,
 				20B6E3B81E23373800C91D4F /* Foundation.framework */,
@@ -399,7 +409,7 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -407,6 +417,11 @@
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = W2P2A5AUVA;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 					205B66791E2203B70092D64C = {
 						CreatedOnToolsVersion = 8.1;
@@ -576,7 +591,6 @@
 		2019BD8B1E2600A200039368 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = weatherTodayExtension/weatherTodayExtension.entitlements;
 				DEVELOPMENT_TEAM = W2P2A5AUVA;
 				INFOPLIST_FILE = weatherTodayExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -589,7 +603,6 @@
 		2019BD8C1E2600A200039368 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = weatherTodayExtension/weatherTodayExtension.entitlements;
 				DEVELOPMENT_TEAM = W2P2A5AUVA;
 				INFOPLIST_FILE = weatherTodayExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -771,6 +784,7 @@
 				2019BD8C1E2600A200039368 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		205B665C1E2203B70092D64C /* Build configuration list for PBXProject "weather" */ = {
 			isa = XCConfigurationList;

@@ -59,7 +59,7 @@
 //    NSString *string = [NSString stringWithFormat:@"%@",[sharedd objectForKey:@"number"]];
 //    NSLog(@"%@",string);
     
-     NSString *httpUrl = @"https://free-api.heweather.com/v5/weather?city=CN101270401&key=cb30db2c8c294d1995245e1a4c2914a0";
+     NSString *httpUrl = @"https://free-api.heweather.com/v5/weather?city=CN101270401&key=0b405fc4725643e3a1a91a89738ad4fb";
      [self request:httpUrl];
     self.mytableview.delegate = self;
     self.mytableview.dataSource = self;
@@ -85,24 +85,34 @@
     NSURL *url = [NSURL URLWithString:httpUrl];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10];
     [request setHTTPMethod:@"GET"];
-    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *  response, NSData * data, NSError *  error) {
-        if(error){
-            NSLog(@"出错");
-        }else{
-            NSInteger responseCode = [(NSHTTPURLResponse *)response statusCode];
-            
-            NSLog(@"responseCode == %ld",responseCode);
-            //存储json
-            NSString *fullPath = [[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingPathComponent:[NSString stringWithFormat:@"weather"]];
-            NSFileManager *fielManager = [NSFileManager defaultManager];
-            if([fielManager fileExistsAtPath:fullPath]){
-                [fielManager removeItemAtPath:fullPath error:nil];
-            }
-            [data writeToFile:fullPath atomically:YES];
-            NSDictionary *content = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];//转换数据格式
-            
-                }
-    }];
+   NSData *data= [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+    NSLog(@"%@",data);
+    NSString *fullPath = [[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingPathComponent:[NSString stringWithFormat:@"weather"]];
+    NSFileManager *fielManager = [NSFileManager defaultManager];
+    if([fielManager fileExistsAtPath:fullPath]){
+        [fielManager removeItemAtPath:fullPath error:nil];
+    }
+    [data writeToFile:fullPath atomically:YES];
+    NSDictionary *content = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];//转换数据格式
+    NSLog(@"%@",content);
+//     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
+//        if(connectionError){
+//            NSLog(@"出错");
+//        }else{
+//            NSInteger responseCode = [(NSHTTPURLResponse *)response statusCode];
+//            
+//            NSLog(@"responseCode == %ld",responseCode);
+//            //存储json
+//            NSString *fullPath = [[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingPathComponent:[NSString stringWithFormat:@"weather"]];
+//            NSFileManager *fielManager = [NSFileManager defaultManager];
+//            if([fielManager fileExistsAtPath:fullPath]){
+//                [fielManager removeItemAtPath:fullPath error:nil];
+//            }
+//            [data writeToFile:fullPath atomically:YES];
+//            NSDictionary *content = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];//转换数据格式
+//            
+//                }
+//    }];
 }
 
 
