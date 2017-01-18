@@ -409,7 +409,7 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
-								enabled = 0;
+								enabled = 1;
 							};
 						};
 					};
@@ -591,6 +591,7 @@
 		2019BD8B1E2600A200039368 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = weatherTodayExtension/weatherTodayExtension.entitlements;
 				DEVELOPMENT_TEAM = W2P2A5AUVA;
 				INFOPLIST_FILE = weatherTodayExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -603,6 +604,7 @@
 		2019BD8C1E2600A200039368 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = weatherTodayExtension/weatherTodayExtension.entitlements;
 				DEVELOPMENT_TEAM = W2P2A5AUVA;
 				INFOPLIST_FILE = weatherTodayExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
