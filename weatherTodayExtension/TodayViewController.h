@@ -11,5 +11,10 @@
 @interface TodayViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UILabel *detailLabel;
+@property (weak, nonatomic) IBOutlet UILabel *temLabel;
+@property (weak, nonatomic) IBOutlet UILabel *humLabel;
+@property (weak, nonatomic) IBOutlet UILabel *windDirection;
+@property (weak, nonatomic) IBOutlet UILabel *windenergy;
+@property (weak, nonatomic) IBOutlet UIImageView *image;
 
 @end

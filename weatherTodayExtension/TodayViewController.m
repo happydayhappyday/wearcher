@@ -23,15 +23,18 @@
 }
 - (void)viewWillAppear:(BOOL)animated{
   
-    
-    [self config];
 }
 -(void)config{
     NSString *groupID = @"group.com.2016.widgetweather";
     NSUserDefaults *shared = [[NSUserDefaults alloc]initWithSuiteName:groupID];
-    NSString *string = [NSString stringWithFormat:@"%@",[shared objectForKey:@"number"]];
-    NSLog(@"%@",string);
-    self.detailLabel.text = string;
+    self.temLabel.text = [NSString stringWithFormat:@"%@°",[shared objectForKey:@"tmp"]];
+    self.detailLabel.text = [NSString stringWithFormat:@"%@",[shared objectForKey:@"txt"]];
+    self.windenergy.text = [NSString stringWithFormat:@"%@",[shared objectForKey:@"sc"]];
+    self.windDirection.text = [NSString stringWithFormat:@"%@",[shared objectForKey:@"dir"]];
+    self.humLabel.text = [NSString stringWithFormat:@"%@",[shared objectForKey:@"hum"]];
+    self.image.image = [UIImage imageNamed:[shared objectForKey:@"code"]];
+    
+   // self.detailLabel.text = string;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

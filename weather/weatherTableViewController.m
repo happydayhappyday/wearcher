@@ -47,12 +47,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //widget数据
-    NSString *groupID = @"group.com.2016.widgetweather";
-    NSUserDefaults *shared = [[NSUserDefaults alloc]initWithSuiteName:groupID];
-    [shared setObject:@"1000" forKey:@"number"];
-    [shared synchronize];
-    
+//    //widget数据
+//    NSString *groupID = @"group.com.2016.widgetweather";
+//    NSUserDefaults *shared = [[NSUserDefaults alloc]initWithSuiteName:groupID];
+//    [shared setObject:@"1000" forKey:@"number"];
+//    [shared synchronize];
+//    
     
     NSString *groupID1 = @"group.com.2016.widgetweather";
     NSUserDefaults *sharedd = [[NSUserDefaults alloc]initWithSuiteName:groupID1];
@@ -123,6 +123,21 @@
     
     //第二层
     NSDictionary *now = [jsondata objectForKey:@"now"];
+    //当前风力数据
+    NSDictionary *wind = [now objectForKey:@"wind"];
+    //当前天气数据
+    NSDictionary *conddic = [now objectForKey:@"cond"];
+    //保存widget数据
+    NSString *groupID = @"group.com.2016.widgetweather";
+    NSUserDefaults *shared = [[NSUserDefaults alloc]initWithSuiteName:groupID];
+    [shared setObject:[now objectForKey:@"tmp"] forKey:@"tmp"];
+    [shared setObject:[now objectForKey:@"hum"] forKey:@"hum"];
+    [shared setObject:[wind objectForKey:@"dir"] forKey:@"dir"];
+    [shared setObject:[wind objectForKey:@"sc"] forKey:@"sc"];
+    [shared setObject:[conddic objectForKey:@"txt"] forKey:@"txt"];
+    [shared setObject:[conddic objectForKey:@"code"] forKey:@"code"];
+    [shared synchronize];
+    NSLog(@"%@",now);
     NSDictionary *jsondata1 = [[jsondata objectForKey:@"daily_forecast"]objectAtIndex:0];
     NSDictionary *jsondata2 = [[jsondata objectForKey:@"daily_forecast"]objectAtIndex:1];
     NSDictionary *jsondata3 = [[jsondata objectForKey:@"daily_forecast"]objectAtIndex:2];

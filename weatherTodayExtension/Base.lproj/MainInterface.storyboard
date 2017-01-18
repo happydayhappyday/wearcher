@@ -111,6 +111,11 @@
                     <size key="freeformSize" width="375" height="110"/>
                     <connections>
                         <outlet property="detailLabel" destination="4DQ-Us-LvZ" id="oEi-0T-Jwk"/>
+                        <outlet property="humLabel" destination="Mdf-iU-CgY" id="xkj-BP-I4j"/>
+                        <outlet property="image" destination="spI-OP-fbM" id="nw4-Fe-XZt"/>
+                        <outlet property="temLabel" destination="oOL-6a-7QI" id="lGQ-X7-tdA"/>
+                        <outlet property="windDirection" destination="hs4-dM-RPm" id="RQn-kJ-2Mq"/>
+                        <outlet property="windenergy" destination="k92-bh-PWX" id="M7K-h7-MXD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vbd-b8-3JJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
