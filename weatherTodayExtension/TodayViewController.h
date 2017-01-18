@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface TodayViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UILabel *namelab;
+
+@property (weak, nonatomic) IBOutlet UILabel *detailLabel;
 
 @end

@@ -31,7 +31,7 @@
     NSUserDefaults *shared = [[NSUserDefaults alloc]initWithSuiteName:groupID];
     NSString *string = [NSString stringWithFormat:@"%@",[shared objectForKey:@"number"]];
     NSLog(@"%@",string);
-    self.namelab.text = string;
+    self.detailLabel.text = string;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

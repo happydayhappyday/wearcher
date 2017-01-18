@@ -3,6 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>com.apple.security.application-groups</key>
-	<array/>
+	<array>
+		<string>group.com.2016.widgetweather</string>
+		<string>group.csy.weather</string>
+	</array>
 </dict>
 </plist>
