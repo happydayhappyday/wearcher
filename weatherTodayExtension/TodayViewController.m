@@ -36,6 +36,18 @@
     
    // self.detailLabel.text = string;
 }
+- (void)openURLContainingAPP{
+    //通过extensionContext借助host app调起app
+    [self.extensionContext openURL:[NSURL URLWithString:@"DailyToolBox://"] completionHandler:^(BOOL success) {
+        NSLog(@"open url result:%d",success);
+    }];
+}
+- (IBAction)GoToHost:(UIButton *)sender {
+    [self openURLContainingAPP];
+    NSLog(@"进入到主应用");
+    
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
